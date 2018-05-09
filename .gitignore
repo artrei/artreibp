@@ -1,0 +1,9 @@
+# KDE directory preferences
+.directory
+
+# Dependency directories
+node_modules/
+
+# Output directories
+dist/assets/css/
+dist/assets/js/
