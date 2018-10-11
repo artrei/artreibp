@@ -1,0 +1,197 @@
+#brandList {
+  .media {
+    &+ .media {
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+}
+
+#addItem,
+#getReservation {
+  padding-bottom: 60px;
+}
+
+#thankYou {
+  .content {
+    margin-top: 0.75rem;
+    h5 {
+      font-weight: 900;
+    }
+    p {
+      font-weight: 700;
+    }
+    hr {
+      background-color: $grey;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.column {
+  &.bg-grey {
+    background-color: $grey-lighter;
+  }
+  &.no-wrap {
+    padding: 0 7px;
+    margin: 12px 0;
+    white-space: nowrap;
+    overflow: auto;
+  }
+}
+
+.media-content {
+  .content {
+    .top-half {
+      min-height: 60px;
+      margin-bottom: 0;
+      &.menu {
+        min-height: 70px;
+      }
+    }
+  }
+}
+
+.parent-categories {
+  .parent-category {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+    .category-bg {
+      width: 96px;
+      height: 64px;
+      color: $white;
+      text-align: center;
+      line-height: 30px;
+      padding: 10px 0;
+      border-radius: 4px;
+    }
+  }
+}
+
+.categories {
+  .button {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+.button {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 100%;
+  height: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.media {
+  .media-left {
+    .image {
+      width: 120px;
+      background-color: $white;
+    }
+  }
+  .media-content {
+    .content {
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.modal-card-body {
+  .button {
+    margin-top: 10px;
+  }
+}
+
+.modal-header {
+  font-weight: 900;
+  color: $primary;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modifier {
+  padding-bottom: 0.75rem;
+  .columns {
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-top: 0;
+    .column {
+      padding: 6px;
+      .button {
+        display: block;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+  .control {
+    margin-top: 10px;
+  }
+  &+ .modifier {
+    padding-top: 0.75rem;
+    border-top: 1px solid $grey-lighter;
+    margin-top: 1rem;
+  }
+}
+
+.footer {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $grey-lighter;
+  padding: 0.75rem 0.5rem;
+  .quantity {
+    display: flex;
+    flex: 1 1 30%;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    strong {
+      flex: 2 1 30%;
+      text-align: center;
+      line-height: 36px;
+    }
+    .button {
+      flex: 1 1 30%;
+      background-color: $grey-light;
+      color: $primary;
+      padding: 5px;
+    }
+  }
+  .confirm {
+    flex: 1 1 70%;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+  }
+}
+
+.fake-select-box {
+  width: 100%;
+}
+
+.fake-select-text {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+.jconfirm {
+  .jconfirm-cell {
+    .jconfirm-holder {
+      padding: 15px;
+    }
+  } 
+}

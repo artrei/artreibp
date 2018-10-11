@@ -9,8 +9,8 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
     package = require('./package.json'),
-    cssDir = 'dist/assets/css',
-    jsDir = 'dist/assets/js';
+    cssDir = '../makan-master/vue/assets/css',
+    jsDir = '../makan-master/vue/assets/js';
 
 var banner = [
   '/*!\n' +
@@ -25,34 +25,38 @@ var banner = [
 ].join('');
 
 gulp.task('css', function () {
-    return gulp.src('src/scss/styles.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer('last 4 version'))
-    .pipe(gulp.dest(cssDir))
-    .pipe(cssnano())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(header(banner, { package : package }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(cssDir))
+  gulp.src('src/scss/styles.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(autoprefixer('last 4 version'))
+      .pipe(gulp.dest(cssDir))
+      .pipe(cssnano())
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(header(banner, { package : package }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(cssDir))
 });
 
 gulp.task('js',function(){
   gulp.src('src/js/scripts.js')
-    .pipe(sourcemaps.init())
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(header(banner, { package : package }))
-    .pipe(gulp.dest(jsDir))
-    .pipe(uglify())
-    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-    .pipe(header(banner, { package : package }))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(jsDir))
+      .pipe(sourcemaps.init())
+      .pipe(jshint('.jshintrc'))
+      .pipe(jshint.reporter('default'))
+      .pipe(header(banner, { package : package }))
+      .pipe(gulp.dest(jsDir))
+      .pipe(uglify())
+      .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+      .pipe(header(banner, { package : package }))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(jsDir))
 });
 
-gulp.task('default', ['css', 'js'], function () {
-    gulp.watch("src/scss/**/*.scss", ['css']);
-    gulp.watch("src/js/*.js", ['js']);
+gulp.task('default', ['css'], function () {
+  gulp.watch("src/scss/**/*.scss", ['css']);
+});
+
+gulp.task('cssjs', ['css', 'js'], function () {
+  gulp.watch("src/scss/**/*.scss", ['css']);
+  gulp.watch("src/js/*.js", ['js']);
 });

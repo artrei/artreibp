@@ -32,5 +32,9 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.5"
+  },
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "font-awesome": "^4.7.0"
   }
 }

@@ -3,27 +3,30 @@
 //----------------------------------*/
 
 @import 'vars';
+@import 'bulma-variables';
 
 //----------------------------------*\
 // MIXINS
 //----------------------------------*/
 
-@import 'mixins';
+// @import 'mixins';
 
 //----------------------------------*\
 // FONTS
 //----------------------------------*/
 
-@import 'fonts/roboto';
+// @import 'fonts/roboto';
+@import 'fonts/burlingameprocond';
 
 //----------------------------------*\
-// NORMALIZE
+// VENDORS
 //----------------------------------*/
 
-@import 'vendors/normalize';
+@import 'vendors/bulma';
+@import 'vendors/font-awesome';
 
 //----------------------------------*\
 // STYLES
 //----------------------------------*/
 
-@import 'base';
+@import 'style';
