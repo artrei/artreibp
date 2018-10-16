@@ -25,14 +25,13 @@ var banner = [
 ].join('');
 
 gulp.task('css', function () {
-  gulp.src('src/scss/styles.scss')
+  gulp.src(['src/scss/vendors.scss', 'src/scss/styles.scss'])
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(autoprefixer('last 4 version'))
       .pipe(gulp.dest(cssDir))
       .pipe(cssnano())
       .pipe(rename({ suffix: '.min' }))
-      .pipe(header(banner, { package : package }))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest(cssDir))
 });

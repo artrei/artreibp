@@ -1,3 +1,8 @@
+body > section {
+  height: 100vh;
+  overflow: auto;
+}
+
 #brandList {
   .media {
     &+ .media {
@@ -121,6 +126,9 @@
 
 .modifier {
   padding-bottom: 0.75rem;
+  strong {
+    text-transform: uppercase;
+  }
   .columns {
     padding-right: 6px;
     padding-left: 6px;
@@ -153,7 +161,7 @@
   left: 0;
   width: 100%;
   background-color: $grey-lighter;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem;
   .quantity {
     display: flex;
     flex: 1 1 30%;

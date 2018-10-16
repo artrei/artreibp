@@ -5,19 +5,14 @@
 @import 'vars';
 
 //----------------------------------*\
-// MIXINS
-//----------------------------------*/
-
-// @import 'mixins';
-
-//----------------------------------*\
 // FONTS
 //----------------------------------*/
 
-// @import 'fonts/roboto';
+@import 'fonts/burlingameprocond';
 
 //----------------------------------*\
-// STYLES
+// VENDORS
 //----------------------------------*/
 
-@import 'style';
+@import 'vendors/bulma';
+@import 'vendors/font-awesome';
