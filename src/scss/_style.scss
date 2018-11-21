@@ -3,6 +3,15 @@ body > section {
   overflow: auto;
 }
 
+section {
+  &.has-footer {
+    padding-bottom: 70px;
+  }
+  &.bg-grey {
+    background-color: $grey-lighter;
+  }
+}
+
 #brandList {
   .media {
     &+ .media {
@@ -12,29 +21,111 @@ body > section {
   }
 }
 
-#addItem,
-#getReservation {
-  padding-bottom: 60px;
-}
-
-#thankYou {
-  .content {
-    margin-top: 0.75rem;
-    h5 {
-      font-weight: 900;
+#actionHistory {
+  .columns {
+    margin-bottom: 0;
+  }
+  .history {
+    &+ .history {
+      border-top: 1px solid #bbbbbb;
+      padding-top: 0.75rem;
     }
+  }
+  .history-general {
     p {
       font-weight: 700;
-    }
-    hr {
-      background-color: $grey;
-      margin-right: auto;
-      margin-left: auto;
+    }  
+  }
+  .history-detail {
+    position: relative;
+    background-color: #bbbbbb;
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    .arrow-up {
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      width: 0; 
+      height: 0; 
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;  
+      border-bottom: 8px solid #bbbbbb;
     }
   }
 }
 
+.order-status {
+  background-color: $white;
+  p {
+    font-size: 0.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .level {
+    .level-left {
+      max-width: 60%;
+    }
+  }
+  .row-section {
+    margin-top: 0;
+    .control {
+      margin-top: 0;
+      .button {
+        margin-top: 0;
+      }
+    }
+    &:not(:last-child) {
+      padding-bottom: 0.75rem;
+    }
+  }
+  .order-pending,
+  .order-preparing {
+    background-color: #e6e6e6;
+    border: 1px solid #ff8000;
+    text-transform: none;
+    opacity: 1;
+  }
+  .order-choped,
+  .order-confirmed,
+  .order-makan-time {
+    background-color: #ff8000;
+    color: white;
+    border: none;
+    text-transform: none;
+    opacity: 1;
+  }
+}
+
+.thank-you {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  h5 {
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  p {
+    font-weight: 700;
+  }
+  hr {
+    width: 120px;
+    height: 1px;
+    background-color: $grey-lighter;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.header,
+.main {
+  font-size: 0.8rem;
+}
+
 .column {
+  .field {
+    strong {
+      text-transform: uppercase;
+    }
+  }
   &.bg-grey {
     background-color: $grey-lighter;
   }
@@ -43,18 +134,6 @@ body > section {
     margin: 12px 0;
     white-space: nowrap;
     overflow: auto;
-  }
-}
-
-.media-content {
-  .content {
-    .top-half {
-      min-height: 60px;
-      margin-bottom: 0;
-      &.menu {
-        min-height: 70px;
-      }
-    }
   }
 }
 
@@ -70,6 +149,7 @@ body > section {
       text-align: center;
       line-height: 30px;
       padding: 10px 0;
+      border: 1px solid $grey;
       border-radius: 4px;
     }
   }
@@ -104,8 +184,12 @@ body > section {
   }
   .media-content {
     .content {
-      p {
-        font-size: 0.8rem;
+      .top-half {
+        min-height: 60px;
+        margin-bottom: 0;
+        &.product {
+          min-height: 70px;
+        }
       }
     }
   }
@@ -122,10 +206,35 @@ body > section {
   color: $primary;
   text-align: center;
   text-transform: uppercase;
+  .icon {
+    border: 2px solid;
+    border-radius: 100%;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.modal-body {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.row-section {
+  margin-top: 0.75rem;
+  .control {
+    margin-top: 5px;
+    .button {
+      margin-top: 10px;
+    }
+  }
+  &+ .row-section {
+    padding-top: 0.75rem;
+    border-top: 1px solid $grey-lighter;
+  }
 }
 
 .modifier {
-  padding-bottom: 0.75rem;
   strong {
     text-transform: uppercase;
   }
@@ -138,18 +247,11 @@ body > section {
       .button {
         display: block;
         width: 100%;
+        text-transform: capitalize;
         text-overflow: ellipsis;
         overflow: hidden;
       }
     }
-  }
-  .control {
-    margin-top: 10px;
-  }
-  &+ .modifier {
-    padding-top: 0.75rem;
-    border-top: 1px solid $grey-lighter;
-    margin-top: 1rem;
   }
 }
 
@@ -167,19 +269,22 @@ body > section {
     flex: 1 1 30%;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
-    strong {
-      flex: 2 1 30%;
-      text-align: center;
-      line-height: 36px;
-    }
     .button {
       flex: 1 1 30%;
       background-color: $grey-light;
       color: $primary;
       padding: 5px;
     }
+    &> p {
+      line-height: 1.15;
+    }
+    &> strong {
+      flex: 2 1 30%;
+      text-align: center;
+      line-height: 36px;
+    }
   }
-  .confirm {
+  .action {
     flex: 1 1 70%;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
@@ -194,12 +299,89 @@ body > section {
   pointer-events: none;
   position: absolute;
   top: 0;
+  left: 0;
 }
 
 .jconfirm {
-  .jconfirm-cell {
-    .jconfirm-holder {
-      padding: 15px;
+  .jconfirm-holder {
+    padding: 15px;
+    .jconfirm-box {
+      border-radius: 0;
     }
   } 
+}
+
+#paymentMethods header img {
+	width: 50%;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+#paymentMethods header .brand {
+	font-size: 1.2rem;
+}
+
+#paymentMethods main .payment {
+  padding: 12px;
+  border: 2px solid $grey-lighter;
+}
+
+#paymentMethods main .payment.selected {
+  background-color: $white-ter;
+	border: 2px solid $primary;
+}
+
+#paymentMethods main .payment img {
+	max-width: 80px;
+	max-height: 40px;
+}
+
+#paymentMethods main .payment.selected strong {
+	color: $primary;
+}
+
+#paymentMethods main .tnc {
+	margin-top: 25px;
+	text-align: center;
+}
+
+#paymentMethods main .tnc .link {
+	color: $primary;
+}
+
+.order-checkout {
+	max-width: 340px;
+	width: 86%;
+	padding: 0 20px;
+	margin: 60px auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.field > .country-code {
+	position: absolute;
+	background: #ffffff;
+	max-width: 52px;
+	overflow: hidden;
+	word-wrap: break-word;
+	border: 1px solid #cccccc;
+	z-index: 10;
+}
+
+span.country-code + input {
+	padding-left: 60px;
+}
+
+#guestCheckout {
+	max-width: 60%;
+	margin: auto;
+	padding-top: 60px;
+}
+
+#guestCheckout h3 {
+	padding: 10px 0 10px 0;
+	font-weight: 500;
+	font-size: 1.35em;
 }
