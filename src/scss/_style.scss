@@ -385,3 +385,18 @@ span.country-code + input {
 	font-weight: 500;
 	font-size: 1.35em;
 }
+
+.spin-loader-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: none;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 5px 0 0 $white;
+  animation: spinAround 1s linear infinite;
+}
