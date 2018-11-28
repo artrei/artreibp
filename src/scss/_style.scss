@@ -399,4 +399,7 @@ span.country-code + input {
   border-radius: 50%;
   box-shadow: 0 5px 0 0 $white;
   animation: spinAround 1s linear infinite;
+  &.is-dark {
+    box-shadow: 0 5px 0 0 $grey;
+  }
 }
