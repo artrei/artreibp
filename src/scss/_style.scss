@@ -320,50 +320,46 @@ section {
 	font-size: 1.2rem;
 }
 
-#paymentMethods main .payment {
+#paymentMethods .payment-title {
+  margin-bottom: 0.75rem;
+}
+
+#paymentMethods .payment {
   padding: 12px;
+  margin-bottom: 0.75rem;
   border: 2px solid $grey-lighter;
 }
 
-#paymentMethods main .payment.selected {
+#paymentMethods .payment.selected {
   background-color: $white-ter;
 	border: 2px solid $primary;
 }
 
-#paymentMethods main .payment img {
+#paymentMethods .payment.selected strong {
+	color: $primary;
+}
+
+#paymentMethods .payment img {
 	max-width: 80px;
 	max-height: 40px;
 }
 
-#paymentMethods main .payment.selected strong {
-	color: $primary;
-}
-
-#paymentMethods main .tnc {
-	margin-top: 25px;
-	text-align: center;
-}
-
-#paymentMethods main .tnc .link {
-	color: $primary;
-}
-
-#paymentMethods .paylah .level:not(:last-child) {
+#paymentMethods .payment .level:not(:last-child) {
 	margin-bottom: 12px;
 }
 
-#paymentMethods .paylah .level + .level {
+#paymentMethods .payment .level + .level {
 	border-top: 1px solid #cccccc;
 	padding-top: 12px;
 	margin-left: 25px;
 }
 
-#paymentMethods .paylah .level .radio-button {
+#paymentMethods .payment .level .radio-button {
 	flex-grow: 0;
 	width: 25px;
 }
 
-#paymentMethods .paylah .level.is-mobile .level-item {
+#paymentMethods .payment .level.is-mobile .level-item {
 	justify-content: flex-start;
 	margin-right: 0;
 }
@@ -374,6 +370,15 @@ section {
 
 #paymentMethods .paylah .mobile-number .is-right {
 	width: 50%;
+}
+
+#paymentMethods .tnc {
+	margin-top: 25px;
+	text-align: center;
+}
+
+#paymentMethods .tnc .link {
+	color: $primary;
 }
 
 .order-checkout {
