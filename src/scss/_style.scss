@@ -312,9 +312,8 @@ section {
 }
 
 #paymentMethods header img {
-	width: 50%;
-	margin-left: 10px;
-	margin-top: 15px;
+  height: 40px;
+  margin: 15px 10px 0;
 }
 
 #paymentMethods header .brand {
@@ -347,6 +346,34 @@ section {
 
 #paymentMethods main .tnc .link {
 	color: $primary;
+}
+
+#paymentMethods .paylah .level:not(:last-child) {
+	margin-bottom: 12px;
+}
+
+#paymentMethods .paylah .level + .level {
+	border-top: 1px solid #cccccc;
+	padding-top: 12px;
+	margin-left: 25px;
+}
+
+#paymentMethods .paylah .level .radio-button {
+	flex-grow: 0;
+	width: 25px;
+}
+
+#paymentMethods .paylah .level.is-mobile .level-item {
+	justify-content: flex-start;
+	margin-right: 0;
+}
+
+#paymentMethods .paylah .mobile-number .is-left {
+	width: 50%;
+}
+
+#paymentMethods .paylah .mobile-number .is-right {
+	width: 50%;
 }
 
 .order-checkout {
