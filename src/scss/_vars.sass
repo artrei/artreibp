@@ -89,6 +89,7 @@ $variable-columns: true !default
 /////////////////////////////
 
 $primary: hsl(0, 77%, 51%) !default
+$secondary: hsl(0, 0, 68%) !default
 
 $info: $cyan !default
 $success: $green !default
@@ -100,6 +101,8 @@ $dark: $grey !default
 
 // Invert colors
 
+$primary-invert: $white;
+$secondary-invert: $white;
 $light-invert: $grey-dark !default
 $dark-invert: $white !default
 
@@ -150,7 +153,7 @@ $size-medium: $size-5 !default
 $size-large: $size-4 !default
 
 // Lists and maps
-$custom-colors: null !default
+$custom-colors: ("secondary": ($secondary, $secondary-invert)) !default
 $custom-shades: null !default
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default

@@ -30,7 +30,7 @@ section {
   .history {
     &+.history {
       border-top: 1px solid #bbbbbb;
-      padding-top: 0.75rem;
+      padding-top: 12px;
     }
   }
 
@@ -43,8 +43,8 @@ section {
   .history-detail {
     position: relative;
     background-color: #bbbbbb;
-    font-size: 0.75rem;
-    padding: 0.75rem;
+    font-size: 12px;
+    padding: 12px;
 
     .arrow-up {
       position: absolute;
@@ -77,16 +77,16 @@ section {
   .row-section {
     margin-top: 0;
 
+    &:not(:last-child) {
+      padding-bottom: 12px;
+    }
+
     .control {
       margin-top: 0;
 
       .button {
         margin-top: 0;
       }
-    }
-
-    &:not(:last-child) {
-      padding-bottom: 0.75rem;
     }
   }
 
@@ -110,8 +110,8 @@ section {
 }
 
 .thank-you {
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-top: 12px;
+  margin-bottom: 24px;
 
   h5 {
     font-size: 1rem;
@@ -137,12 +137,6 @@ section {
 }
 
 .column {
-  .field {
-    strong {
-      text-transform: uppercase;
-    }
-  }
-
   &.bg-grey {
     background-color: $grey-lighter;
   }
@@ -152,6 +146,12 @@ section {
     margin: 12px 0;
     white-space: nowrap;
     overflow: auto;
+  }
+
+  .field {
+    strong {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -231,8 +231,8 @@ section {
   .icon {
     border: 2px solid;
     border-radius: 100%;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
@@ -243,7 +243,12 @@ section {
 }
 
 .row-section {
-  margin-top: 0.75rem;
+  margin-top: 12px;
+
+  &+.row-section {
+    padding-top: 12px;
+    border-top: 1px solid $grey-lighter;
+  }
 
   .control {
     margin-top: 5px;
@@ -251,11 +256,6 @@ section {
     .button {
       margin-top: 10px;
     }
-  }
-
-  &+.row-section {
-    padding-top: 0.75rem;
-    border-top: 1px solid $grey-lighter;
   }
 }
 
@@ -272,6 +272,10 @@ section {
     .column {
       padding: 6px;
 
+      &.is-flex {
+        width: 100%;
+      }
+
       .button {
         display: block;
         width: 100%;
@@ -283,6 +287,46 @@ section {
   }
 }
 
+.quantity-button {
+  display: flex;
+  flex: 1 1 30%;
+
+  &.on-right {
+    margin-left: 6px;
+  }
+  
+  &.on-left {
+    margin-right: 6px;
+  }
+
+  .button {
+    flex: 1 1 30%;
+    padding: 5px;
+  }
+
+  &>p {
+    line-height: 1.15;
+  }
+
+  &>strong {
+    flex: 2 1 30%;
+    text-align: center;
+    line-height: 36px;
+  }
+}
+
+.quantity-part {
+  flex: 1 1 70%;
+
+  &.on-right {
+    margin-left: 6px;
+  }
+
+  &.on-left {
+    margin-right: 6px;
+  }
+}
+
 .footer {
   display: flex;
   position: fixed;
@@ -291,36 +335,13 @@ section {
   left: 0;
   width: 100%;
   background-color: $grey-lighter;
-  padding: 0.75rem;
+  padding: 12px;
 
-  .quantity {
-    display: flex;
-    flex: 1 1 30%;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
-
+  .quantity-button {
     .button {
-      flex: 1 1 30%;
       background-color: $grey-light;
       color: $primary;
-      padding: 5px;
     }
-
-    &>p {
-      line-height: 1.15;
-    }
-
-    &>strong {
-      flex: 2 1 30%;
-      text-align: center;
-      line-height: 36px;
-    }
-  }
-
-  .action {
-    flex: 1 1 70%;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
   }
 }
 
@@ -355,12 +376,12 @@ section {
 }
 
 #paymentMethods .payment-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 }
 
 #paymentMethods .payment {
-  padding: 0.5rem;
-  margin-bottom: 0.75rem;
+  padding: 8px;
+  margin-bottom: 12px;
   border: 2px solid $grey-lighter;
 }
 
@@ -379,12 +400,12 @@ section {
 }
 
 #paymentMethods .payment .level:not(:last-child) {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 #paymentMethods .payment .level+.level {
   border-top: 1px solid #cccccc;
-  padding-top: 0.5rem;
+  padding-top: 8px;
   margin-left: 25px;
 }
 
@@ -400,12 +421,12 @@ section {
 
 #paymentMethods .paylah .mobile-number .is-left {
   width: 50%;
-  padding-right: 0.25rem;
+  padding-right: 4px;
 }
 
 #paymentMethods .paylah .mobile-number .is-right {
   width: 50%;
-  padding-left: 0.25rem;
+  padding-left: 4px;
 }
 
 #paymentMethods .tnc {
