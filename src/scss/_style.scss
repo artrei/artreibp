@@ -23,10 +23,6 @@ section {
 }
 
 #actionHistory {
-  .columns {
-    margin-bottom: 0;
-  }
-
   .history {
     &+.history {
       border-top: 1px solid #bbbbbb;
@@ -35,6 +31,8 @@ section {
   }
 
   .history-general {
+    margin-bottom: 0;
+    
     p {
       font-weight: 700;
     }
@@ -59,6 +57,20 @@ section {
   }
 }
 
+#dineIn {
+  .qrcode-button {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid $grey-lighter;
+    border-radius: 5px;
+    margin: 12px auto;
+  }
+
+  .suggestion {
+    margin: 24px auto;
+  }
+}
+
 .order-status {
   background-color: $white;
 
@@ -68,24 +80,49 @@ section {
     line-height: 1.2;
   }
 
-  .level {
-    .level-left {
-      max-width: 60%;
-    }
-  }
-
   .row-section {
     margin-top: 0;
 
-    &:not(:last-child) {
-      padding-bottom: 12px;
+    .level-left {
+      flex-shrink: 1;
     }
 
     .control {
       margin-top: 0;
 
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
       .button {
         margin-top: 0;
+      }
+    }
+  }
+
+  .order-text {
+    padding-right: 5px;
+  }
+
+  .order-preparation,
+  .order-ready {
+    .control {
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+
+    .bridge {
+      width: 8px;
+      height: 27px;
+      padding: 11px 0;
+      margin-top: -13.5px;
+      transform: translateY(50%);
+
+      .line {
+        width: 8px;
+        height: 5px;
+        background-color: #ff8800;
       }
     }
   }
@@ -109,6 +146,15 @@ section {
   }
 }
 
+.order-details {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+
+  .row-section {
+    margin-top: 0;
+  }
+}
+
 .thank-you {
   margin-top: 12px;
   margin-bottom: 24px;
@@ -120,6 +166,10 @@ section {
 
   p {
     font-weight: 700;
+
+    &.has-text-dark {
+      margin-bottom: 24px;
+    }
   }
 
   hr {
@@ -248,6 +298,7 @@ section {
   &+.row-section {
     padding-top: 12px;
     border-top: 1px solid $grey-lighter;
+    margin-top: 12px;
   }
 
   .control {
@@ -273,6 +324,7 @@ section {
       padding: 6px;
 
       &.is-flex {
+        flex: auto;
         width: 100%;
       }
 
@@ -324,6 +376,24 @@ section {
 
   &.on-left {
     margin-right: 6px;
+  }
+}
+
+.strike-separator {
+  display: flex;
+  width: 70%;
+  margin: 24px auto;
+  
+  .strike-line {
+    flex-grow: 1;
+    height: 10px;
+    border-bottom: 1px solid $grey-lighter
+  }
+
+  .strike-text {
+    line-height: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
