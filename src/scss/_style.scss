@@ -19,6 +19,16 @@ section {
       padding-top: 0;
       border-top: none;
     }
+
+    .tag {
+      &:not(:last-child) {
+        margin-right: 0.25em;
+      }
+      
+      height: 1.5em;
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+    }
   }
 }
 
@@ -81,8 +91,6 @@ section {
   }
 
   .row-section {
-    margin-top: 0;
-
     .level-left {
       flex-shrink: 1;
     }
@@ -149,10 +157,6 @@ section {
 .order-details {
   padding-bottom: 12px;
   margin-bottom: 12px;
-
-  .row-section {
-    margin-top: 0;
-  }
 }
 
 .thank-you {
@@ -184,6 +188,14 @@ section {
 .header,
 .main {
   font-size: 0.8rem;
+}
+
+.main {
+  .media {
+    &:first-child {
+      margin-top: -8px;
+    }
+  }
 }
 
 .column {
@@ -293,7 +305,13 @@ section {
 }
 
 .row-section {
-  margin-top: 12px;
+  &.modifier {
+    padding-bottom: 12px;
+  }
+
+  &.order {
+    margin-top: 12px;
+  }
 
   &+.row-section {
     padding-top: 12px;
@@ -436,76 +454,93 @@ section {
   }
 }
 
-#paymentMethods header img {
-  height: 40px;
-  margin: 15px 10px 0;
-}
+#paymentMethods {
+  header {
+    img {
+      height: 40px;
+      margin: 15px 10px 0;
+    }
 
-#paymentMethods header .brand {
-  font-size: 1.2rem;
-}
+    .brand {
+      font-size: 1.2rem;
+    }
+  }
 
-#paymentMethods .payment-title {
-  margin-bottom: 12px;
-}
+  .payment-title {
+    margin-bottom: 12px;
+  }
 
-#paymentMethods .payment {
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 2px solid $grey-lighter;
-}
+  .payment {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 2px solid $grey-lighter;
 
-#paymentMethods .payment.selected {
-  background-color: $white-ter;
-  border: 2px solid $primary;
-}
+    &.selected {
+      background-color: $white-ter;
+      border: 2px solid $primary;
 
-#paymentMethods .payment.selected strong {
-  color: $primary;
-}
+      strong {
+        color: $primary;
+      }
+    }
 
-#paymentMethods .payment img {
-  max-width: 80px;
-  max-height: 40px;
-}
+    img {
+      max-width: 80px;
+      max-height: 40px;
+    }
 
-#paymentMethods .payment .level:not(:last-child) {
-  margin-bottom: 8px;
-}
+    .level {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
 
-#paymentMethods .payment .level+.level {
-  border-top: 1px solid #cccccc;
-  padding-top: 8px;
-  margin-left: 25px;
-}
+      &+.level {
+        border-top: 1px solid #cccccc;
+        padding-top: 8px;
+        margin-left: 25px;
+      }
 
-#paymentMethods .payment .level .radio-button {
-  flex-grow: 0;
-  width: 25px;
-}
+      &.is-mobile {
+        .level-item {
+          justify-content: flex-start;
+          margin-right: 0;
+        }
 
-#paymentMethods .payment .level.is-mobile .level-item {
-  justify-content: flex-start;
-  margin-right: 0;
-}
+        .radio-button {
+          flex-grow: 0;
+          width: 25px;
+        }
 
-#paymentMethods .paylah .mobile-number .is-left {
-  width: 50%;
-  padding-right: 4px;
-}
+        .payment-image {
+          flex-grow: 0;
+          width: 95px;
+        }
+      }
+    }
+  }
 
-#paymentMethods .paylah .mobile-number .is-right {
-  width: 50%;
-  padding-left: 4px;
-}
+  .paylah {
+    .mobile-number {
+      .is-left {
+        width: 50%;
+        padding-right: 4px;
+      }
 
-#paymentMethods .tnc {
-  margin-top: 25px;
-  text-align: center;
-}
+      .is-right {
+        width: 50%;
+        padding-left: 4px;
+      }
+    }
+  }
 
-#paymentMethods .tnc .link {
-  color: $primary;
+  .tnc {
+    margin-top: 25px;
+    text-align: center;
+
+    .link {
+      color: $primary;
+    }
+  }
 }
 
 .order-checkout {
@@ -543,6 +578,100 @@ span.country-code+input {
   padding: 10px 0 10px 0;
   font-weight: 500;
   font-size: 1.35em;
+}
+
+.tnc-container {
+	width: 100%;
+	height: 500px;
+}
+
+.spin-loader-ios {
+  font-size: $spinner-size-ios;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  &.center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .spinner-blade {
+    position: absolute;
+    left: .4629em;
+    bottom: 0;
+    width: .074em;
+    height: .2777em;
+    border-radius: .0555em;
+    background-color: transparent;
+    transform-origin: center -.2222em;
+    animation: spinner-fade 1s infinite linear;
+    $animation-delay: 0s;
+    $blade-rotation: 0deg;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: $animation-delay;
+        transform: rotate($blade-rotation);
+        $blade-rotation: $blade-rotation + 30;
+        $animation-delay: $animation-delay + .083;
+      }
+    }
+  }
+}
+
+.spin-loader-android {
+  font-size: $spinner-size-android;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  animation-name: anim-spinner;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &.center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .circle {
+    width: $spinner-size-android;
+    height: ($spinner-size-android/2);
+    overflow: hidden;
+  }
+
+  .circle-inner {
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border: ($spinner-size-android/8) solid $spinner-color-android;
+    border-right: ($spinner-size-android/8) solid transparent;
+    border-bottom: ($spinner-size-android/8) solid transparent;
+    width: 100%;
+    height: 200%;
+    animation-name: anim-circle-1;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.25, .1, .5, 1);
+  }
+
+  .circle-2 {
+    transform: rotate(180deg);
+    & .circle-inner {
+      animation-name: anim-circle-2;
+    }
+  }
 }
 
 .spin-loader-circle {

@@ -6,3 +6,39 @@
       transform: rotate(359deg);      
   }
 }
+
+@keyframes spinner-fade {
+  from {
+    background-color: $spinner-color-ios
+  }
+  to {
+    background-color: transparent
+  }
+}
+
+@keyframes anim-circle-1 {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(205deg);
+  }
+}
+
+@keyframes anim-circle-2 {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(-115deg);
+  }
+}
+
+@keyframes anim-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
