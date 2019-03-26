@@ -185,11 +185,6 @@ section {
   }
 }
 
-.header,
-.main {
-  font-size: 0.8rem;
-}
-
 .main {
   .media {
     &:first-child {
@@ -690,5 +685,19 @@ span.country-code+input {
 
   &.is-dark {
     box-shadow: 0 5px 0 0 $grey;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  header,
+  main {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  header,
+  main {
+    font-size: 0.8rem;
   }
 }
