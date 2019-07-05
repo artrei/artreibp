@@ -8,6 +8,7 @@
   },
   "keywords": [
     "sass",
+    "scss",
     "css",
     "front-end"
   ],
@@ -18,8 +19,8 @@
   },
   "homepage": "https://github.com/artrei/artreibp#readme",
   "scripts": {
-    "watch-sass": "node-sass scss/styles.scss -o css/ --watch",
-    "compile-sass": "node-sass scss/styles.scss -o css/",
+    "watch": "node-sass scss/styles.scss -o css/ --watch",
+    "compile": "node-sass scss/styles.scss -o css/",
     "storybook": "start-storybook"
   },
   "dependencies": {
