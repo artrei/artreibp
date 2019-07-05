@@ -23,7 +23,16 @@
 @import 'animations';
 
 //----------------------------------*\
+// VENDORS
+//----------------------------------*/
+
+@import 'vendors/bulma';
+// @import 'vendors/font-awesome';
+@import 'vendors/materialdesignicons';
+
+//----------------------------------*\
 // STYLES
 //----------------------------------*/
 
+@import 'load-spinner';
 @import 'style';

@@ -1,8 +1,6 @@
 # artreibp
 
-inspired by [Fastshell](http://github.com/HosseinKarami/fastshell)
-
-A simple front-end boilerplate and workflows with gulp build system.
+A simple front-end boilerplate.
 
 * Source: [github.com/artrei/artreibp](http://github.com/artrei/artreibp)
 * Documentation: [DOCS.md](https://github.com/artrei/artreibp/blob/master/DOCS.md)

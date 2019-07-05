@@ -1,0 +1,88 @@
+.spin-loader-ios {
+  font-size: $spinner-size-ios;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  &.center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .spinner-blade {
+    position: absolute;
+    left: .4629em;
+    bottom: 0;
+    width: .074em;
+    height: .2777em;
+    border-radius: .0555em;
+    background-color: transparent;
+    transform-origin: center -.2222em;
+    animation: spinner-fade 1s infinite linear;
+    $animation-delay: 0s;
+    $blade-rotation: 0deg;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: $animation-delay;
+        transform: rotate($blade-rotation);
+        $blade-rotation: $blade-rotation + 30;
+        $animation-delay: $animation-delay + .083;
+      }
+    }
+  }
+}
+
+.spin-loader-android {
+  font-size: $spinner-size-android;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  animation-name: anim-spinner;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &.center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .circle {
+    width: $spinner-size-android;
+    height: ($spinner-size-android/2);
+    overflow: hidden;
+  }
+
+  .circle-inner {
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border: ($spinner-size-android/8) solid $spinner-color-android;
+    border-right: ($spinner-size-android/8) solid transparent;
+    border-bottom: ($spinner-size-android/8) solid transparent;
+    width: 100%;
+    height: 200%;
+    animation-name: anim-circle-1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.25, .1, .5, 1);
+  }
+
+  .circle-2 {
+    transform: rotate(180deg);
+    & .circle-inner {
+      animation-name: anim-circle-2;
+    }
+  }
+}
