@@ -1,9 +1,8 @@
-# KDE directory preferences
-.directory
-
 # Dependency directories
 node_modules/
 
 # Output directories
-dist/assets/css/
-dist/assets/js/
+css/
+
+# Site specific styles
+scss/_style.scss
