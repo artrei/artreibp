@@ -1,1 +1,107 @@
-// Add site specific styles here
+body {
+	// background: url("../img/back.jpg");
+	background-color: $grey-darker;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+}
+
+// .hero-body {
+// 	// background: url("../img/back.jpg");
+// 	background-color: $black;
+// 	background-repeat: no-repeat;
+// 	background-attachment: fixed;
+// 	background-size: 100% 100%;
+// }
+
+// #footer {
+// 	padding: 20px;
+// }
+
+// #connected {
+// 	padding-top: 20px;
+// }
+
+// .is-semi-transparent {
+// 	background:rgba(255,255,255,0.7);
+// }
+
+// .is-semi-dark-transparent {
+// 	background:rgba(0, 0, 0,0.7);
+// }
+
+// a.has-hover-dark:hover, label.has-hover-dark:hover {
+// 	background-color: $grey;
+// }
+
+// .bm--card-equal-height {
+//    display: flex;
+//    flex-direction: column;
+//    height: 100%;
+// }
+// .bm--card-equal-height .card-footer {
+//    margin-top: auto;
+// }
+
+// .navbar-burger {
+//   span {
+//     height: 3px;
+    
+//     &:nth-child(1) {
+//       top: 20px; 
+//     }
+    
+//     &:nth-child(2) {
+//       top: 25px;
+//     }
+
+//     &:nth-child(3) {
+//       top: 30px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 700px) {
+// 	.is-responsive {
+// 		border: 0;
+// 	}
+
+// 	.is-responsive caption {
+// 		font-size: 1.3em;
+// 	}
+  
+// 	.is-responsive thead {
+// 		border: none;
+// 		clip: rect(0 0 0 0);
+// 		height: 1px;
+// 		margin: -1px;
+// 		overflow: hidden;
+// 		padding: 0;
+// 		position: absolute;
+// 		width: 1px;
+// 	}
+  
+// 	.is-responsive tr {
+// 		border-bottom: 3px solid $white-ter;
+// 		display: block;
+// 		margin-bottom: .625em;
+// 	}
+  
+// 	.is-responsive td {
+// 		border-bottom: 1px solid $white-ter;
+// 		display: block;
+// 		text-align: right;
+// 		width: 250px;
+// 	}
+  
+// 	.is-responsive td::before {
+// 		content: attr(data-label);
+// 		float: left;
+// 		font-weight: bold;
+// 		text-transform: uppercase;
+// 	}
+  
+// 	.is-responsive td:last-child {
+// 		border-bottom: 0;
+// 	}
+// }
